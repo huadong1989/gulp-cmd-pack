@@ -1,18 +1,18 @@
-# gulp-cmd-pack
+# gulp-cmd-pack-fork
 seajs的cmd模块合并打包工具
 
 
 ## 安装
 
 ```bash
-npm install gulp-cmd-pack
+npm install gulp-cmd-pack-fork
 ```
 
 ## 使用
 
 ```javascript
 var gulp = require('gulp');
-var cmdPack = require('gulp-cmd-pack');
+var cmdPack = require('gulp-cmd-pack-fork');
 var uglify = require('gulp-uglify');
 
 gulp.task('cmd', function () {
