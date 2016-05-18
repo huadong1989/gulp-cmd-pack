@@ -31,7 +31,7 @@ module.exports = function (option) {
             return cb();
         }
 
-        if (!option.base || !option.mainId) {
+        if (!option.base) {
             var opts = !option.base ? '`option.base`' : '`option.mainId`';
             gutil.log(gutil.colors.red(PLUGIN_NAME + ' error: ' + opts + ' is required!'));
             return cb(null, file);
@@ -119,8 +119,10 @@ function parseTemplate(option, code, mod) {
 
 
 //解析模块树并且读取模块
-function parseContents(option) {
+function parseContents(option,file) {
+    var filePath = file.path.replace(process.cwd()+"/",'');
     return new Promise(function (done) {
+        option.mainId = path.dirname(filePath)+"/"+path.basename(filePath,'.js')
         var deps = parseDependencies(option, option.content, null, {
             root: true,
             id: option.mainId
