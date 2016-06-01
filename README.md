@@ -18,8 +18,7 @@ var uglify = require('gulp-uglify');
 gulp.task('cmd', function () {
     gulp.src('path/to/module/app.js') //main文件
         .pipe(cmdPack({
-            mainId: 'app', //初始化模块的id
-            base: 'path/to/module/', //base路径
+            base: './', //seajs base路径
             alias: {
                 dialog: '../../bower_components/art-dialog/dist/dialog-plus-min.js',
                 customScrollBar: '../../bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.js'
@@ -66,7 +65,7 @@ Module `path/module/b.js` :
 Gulp:
 
 ```js
-    var cmdPack = require('gulp-cmd-wrap');
+    var cmdPack = require('gulp-cmd-pack-fork');
     gulp.src( 'path/module/a.js' )
         .pipe( cmdPack({
             mainId : 'a',
@@ -116,7 +115,7 @@ Use
     
     Gulp :
     ```js
-        var cmdPack = require('gulp-cmd-wrap');
+        var cmdPack = require('gulp-cmd-pack-fork');
         gulp.src( 'path/module/a.js' )
             .pipe( cmdPack({
                 mainId : 'a',
@@ -158,10 +157,9 @@ Use
     
     Gulp :
     ```js
-        var cmdPack = require('gulp-cmd-wrap');
+        var cmdPack = require('gulp-cmd-pack-fork');
         gulp.src( 'path/module/test.js' )
             .pipe( cmdPack({
-                mainId : 'test',
                 base : 'path/module',
                 tmpExtNames : ['.ejs'] //提供模板文件的后缀名用来区分模板
             }))
