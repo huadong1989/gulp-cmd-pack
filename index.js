@@ -8,7 +8,7 @@ var fs = require('fs');
 var gutil = require('gulp-util');
 var _ = require('underscore');
 
-var PLUGIN_NAME = 'gulp-cmd-pack';
+var PLUGIN_NAME = 'gulp-cmd-pack-fork';
 
 module.exports = function (option) {
 
