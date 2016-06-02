@@ -36,6 +36,8 @@ module.exports = function (option) {
             gutil.log(gutil.colors.red(PLUGIN_NAME + ' error: ' + opts + ' is required!'));
             return cb(null, file);
         }
+        
+        option.mods = [];
 
         if (file.isBuffer()) {
             option.content = file.contents.toString();
